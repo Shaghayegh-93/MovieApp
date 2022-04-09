@@ -67,10 +67,11 @@ const Main = () => {
     }
   };
   return (
-    <>
+    <div className={styles.appContainer}>
       <nav className={styles.navContainer}>
-        <div className={styles.navWrapper}>
+        <ul className={styles.navWrapper}>
           <div className={styles.leftSide}>
+            
             <ul>
               {navItem.map((item) => {
                 return (
@@ -87,7 +88,9 @@ const Main = () => {
               })}
             </ul>
           </div>
-          <form className={styles.rightSide}>
+          <div className={styles.rightSide}>
+            <div className={styles.searchBox}>
+
             <SearchOutlinedIcon />
             <input
               type="text"
@@ -97,14 +100,15 @@ const Main = () => {
               onChange={changeHandler}
               onKeyDown={searchMovie}
             ></input>
-          </form>
-        </div>
+            </div>
+          </div>
+        </ul>
       </nav>
 
       <div className={styles.mainContainer}>
         <MovieList movieData={movieData} />
       </div>
-    </>
+    </div>
   );
 };
 
